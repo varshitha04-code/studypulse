@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StudyPulse - Tasks</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="dashboard-page">
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-logo">
+                📚 StudyPulse
+            </div>
+
+            <nav>
+
+                <a href="dashboard.html">
+                    🏠 Dashboard
+                </a>
+
+                <a href="#">
+                    📅 Timetable
+                </a>
+
+                <a href="tasks.html" class="active">
+                    ✅ Tasks
+                </a>
+
+                <a href="#">
+                    ⏱️ Focus Timer
+                </a>
+
+                <a href="#">
+                    📝 Exams
+                </a>
+
+                <a href="#">
+                    📊 Progress
+                </a>
+
+                <a href="#">
+                    🎯 Goals
+                </a>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+
+                <a href="#">
+                    ⚙️ Settings
+                </a>
+
+                <a href="index.html">
+                    🚪 Logout
+                </a>
+
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN -->
+
+        <main class="main-dashboard">
+
+            <header class="dashboard-top">
+
+                <div>
+<div class="search-box">
+    <input
+        type="text"
+        id="taskSearch"
+        placeholder="🔎 Search tasks..."
+        oninput="searchTasks()"
+    >
+</div>
+                    <h1>My Tasks ✅</h1>
+
+                    <p>
+                        Organize your assignments and study work.
+                    </p>
+
+                </div>
+
+                <div class="student-profile">
+
+                    <div class="profile-circle">
+                        S
+                    </div>
+
+                    <div>
+                        <strong>Student</strong>
+                        <small>Computer Science</small>
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- ADD TASK -->
+
+            <div class="task-form dashboard-box">
+
+                <h2>Add New Task</h2>
+
+                <div class="form-grid">
+
+                    <input
+                        type="text"
+                        id="taskTitle"
+                        placeholder="Task name"
+                    >
+
+                    <input
+                        type="date"
+                        id="taskDate"
+                    >
+
+                    <select id="taskPriority">
+
+                        <option value="Low">
+                            Low Priority
+                        </option>
+
+                        <option value="Medium">
+                            Medium Priority
+                        </option>
+
+                        <option value="High">
+                            High Priority
+                        </option>
+
+                    </select>
+
+                    <button onclick="createTask()">
+                        + Add Task
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- TASK STATISTICS -->
+
+            <div class="stats-grid task-stats">
+
+                <div class="stat-box">
+
+                    <div class="stat-icon">
+                        📋
+                    </div>
+
+                    <div>
+
+                        <p>Total Tasks</p>
+
+                        <h2 id="totalTasks">
+                            0
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-box">
+
+                    <div class="stat-icon">
+                        ⏳
+                    </div>
+
+                    <div>
+
+                        <p>Pending</p>
+
+                        <h2 id="pendingTasks">
+                            0
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-box">
+
+                    <div class="stat-icon">
+                        ✅
+                    </div>
+
+                    <div>
+
+                        <p>Completed</p>
+
+                        <h2 id="completedTasks">
+                            0
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-box">
+
+                    <div class="stat-icon">
+                        🔥
+                    </div>
+
+                    <div>
+
+                        <p>High Priority</p>
+
+                        <h2 id="highTasks">
+                            0
+                        </h2>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- TASK LIST -->
+
+            <div class="dashboard-box">
+
+                <div class="box-header">
+
+                    <h2>My Tasks</h2>
+
+                    <select
+                        id="taskFilter"
+                        onchange="displayTasks()"
+                    >
+
+                        <option value="all">
+                            All Tasks
+                        </option>
+
+                        <option value="pending">
+                            Pending
+                        </option>
+
+                        <option value="completed">
+                            Completed
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div id="taskList">
+
+                    <!-- Tasks appear here -->
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

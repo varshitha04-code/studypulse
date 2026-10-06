@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Study Goals - StudyPulse</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dashboard-page">
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            📚 StudyPulse
+        </div>
+
+        <nav>
+
+            <a href="dashboard.html">🏠 Dashboard</a>
+
+            <a href="timetable.html">📅 Timetable</a>
+
+            <a href="tasks.html">📝 Tasks</a>
+
+            <a href="focus.html">⏱️ Focus Timer</a>
+
+            <a href="exams.html">📚 Exams</a>
+
+            <a href="progress.html">📊 Progress</a>
+
+            <a href="goals.html" class="active">🎯 Goals</a>
+
+            <a href="#">⚙️ Settings</a>
+
+        </nav>
+
+        <a href="index.html" class="logout">
+            🚪 Logout
+        </a>
+
+    </aside>
+
+
+    <main class="main-dashboard">
+
+        <div class="dashboard-top">
+
+            <div>
+
+                <h1>Study Goals 🎯</h1>
+
+                <p>
+                    Set targets and keep yourself on track.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Add Goal -->
+
+        <section class="dashboard-box goal-form-box">
+
+            <div class="box-header">
+
+                <h2>
+                    Create New Goal
+                </h2>
+
+            </div>
+
+            <form id="goalForm">
+
+                <div class="form-grid">
+
+                    <div>
+
+                        <label>
+                            Goal Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="goalName"
+                            placeholder="Example: Study Operating Systems"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div>
+
+                        <label>
+                            Target
+                        </label>
+
+                        <input
+                            type="number"
+                            id="goalTarget"
+                            min="1"
+                            placeholder="Example: 20"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div>
+
+                        <label>
+                            Unit
+                        </label>
+
+                        <select id="goalUnit">
+
+                            <option value="hours">
+                                Hours
+                            </option>
+
+                            <option value="tasks">
+                                Tasks
+                            </option>
+
+                            <option value="sessions">
+                                Focus Sessions
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div>
+
+                        <label>
+                            Deadline
+                        </label>
+
+                        <input
+                            type="date"
+                            id="goalDeadline"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="add-task-btn">
+
+                    + Create Goal
+
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- Goal Statistics -->
+
+        <section class="focus-stat-grid">
+
+            <div class="stat-box">
+
+                <div class="stat-icon">
+                    🎯
+                </div>
+
+                <h3 id="totalGoals">
+                    0
+                </h3>
+
+                <p>
+                    Total Goals
+                </p>
+
+            </div>
+
+
+            <div class="stat-box">
+
+                <div class="stat-icon">
+                    🔥
+                </div>
+
+                <h3 id="activeGoals">
+                    0
+                </h3>
+
+                <p>
+                    Active Goals
+                </p>
+
+            </div>
+
+
+            <div class="stat-box">
+
+                <div class="stat-icon">
+                    🏆
+                </div>
+
+                <h3 id="completedGoals">
+                    0
+                </h3>
+
+                <p>
+                    Completed Goals
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Goal List -->
+<div class="search-box">
+    <input
+        type="text"
+        id="goalSearch"
+        placeholder="🔎 Search goals..."
+        oninput="searchGoals()"
+    >
+</div>
+        <section class="dashboard-box">
+
+            <div class="box-header">
+
+                <h2>
+                    My Goals
+                </h2>
+
+            </div>
+
+            <div id="goalList"></div>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

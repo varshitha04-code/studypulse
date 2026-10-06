@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StudyPulse - Timetable</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="dashboard-page">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            📚 StudyPulse
+        </div>
+
+        <nav>
+
+            <a href="dashboard.html">
+                🏠 Dashboard
+            </a>
+
+            <a href="timetable.html" class="active">
+                📅 Timetable
+            </a>
+
+            <a href="tasks.html">
+                ✅ Tasks
+            </a>
+
+            <a href="#">
+                ⏱️ Focus Timer
+            </a>
+
+            <a href="#">
+                📝 Exams
+            </a>
+
+            <a href="#">
+                📊 Progress
+            </a>
+
+            <a href="#">
+                🎯 Goals
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <a href="#">
+                ⚙️ Settings
+            </a>
+
+            <a href="index.html">
+                🚪 Logout
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main-dashboard">
+
+        <header class="dashboard-top">
+
+            <div>
+
+                <h1>Smart Timetable 📅</h1>
+
+                <p>
+                    Plan your study sessions and stay organized.
+                </p>
+
+            </div>
+
+            <div class="student-profile">
+
+                <div class="profile-circle">
+                    S
+                </div>
+
+                <div>
+                    <strong>Student</strong>
+                    <small>Computer Science</small>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- ADD SESSION -->
+<div class="search-box">
+    <input
+        type="text"
+        id="timetableSearch"
+        placeholder="🔎 Search subjects..."
+        oninput="searchTimetable()"
+    >
+</div>
+
+        <div class="dashboard-box timetable-form">
+
+            <h2>➕ Add Study Session</h2>
+
+            <div class="form-grid">
+
+                <input
+                    type="text"
+                    id="subjectName"
+                    placeholder="Subject"
+                >
+
+                <input
+                    type="date"
+                    id="studyDate"
+                >
+
+                <input
+                    type="time"
+                    id="startTime"
+                >
+
+                <input
+                    type="time"
+                    id="endTime"
+                >
+
+                <button onclick="addTimetableSession()">
+                    Add Session
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- DAY FILTER -->
+
+        <div class="timetable-controls">
+<div class="calendar-box">
+
+    <div class="calendar-header">
+        <button onclick="changeCalendarMonth(-1)">←</button>
+
+        <h2 id="calendarMonth">October 2026</h2>
+
+        <button onclick="changeCalendarMonth(1)">→</button>
+    </div>
+
+    <div class="calendar-weekdays">
+        <div>Sun</div>
+        <div>Mon</div>
+        <div>Tue</div>
+        <div>Wed</div>
+        <div>Thu</div>
+        <div>Fri</div>
+        <div>Sat</div>
+    </div>
+
+    <div id="calendarDays" class="calendar-days"></div>
+
+</div>
+
+            <button onclick="showToday()">
+                📅 Today
+            </button>
+
+            <button onclick="showAllSessions()">
+                📋 All Sessions
+            </button>
+
+        </div>
+
+
+        <!-- TIMETABLE -->
+
+        <div class="dashboard-box">
+
+            <div class="box-header">
+
+                <h2>📚 Your Study Schedule</h2>
+
+                <span id="sessionCount">
+                    0 Sessions
+                </span>
+
+            </div>
+
+
+            <div id="timetableList">
+
+                <!-- Sessions appear here -->
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

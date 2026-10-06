@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Planner - StudyPulse</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dashboard-page">
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            📚 StudyPulse
+        </div>
+
+        <nav>
+            <a href="dashboard.html">🏠 Dashboard</a>
+            <a href="timetable.html">📅 Timetable</a>
+            <a href="tasks.html">📝 Tasks</a>
+            <a href="focus.html">⏱️ Focus Timer</a>
+            <a href="exams.html" class="active">📚 Exams</a>
+            <a href="#">📊 Progress</a>
+            <a href="#">🎯 Goals</a>
+            <a href="#">⚙️ Settings</a>
+        </nav>
+
+        <a href="index.html" class="logout">🚪 Logout</a>
+
+    </aside>
+
+
+    <main class="main-dashboard">
+
+        <div class="dashboard-top">
+            <div>
+                <h1>Exam Planner 📚</h1>
+                <p>Plan your exams and stay prepared.</p>
+            </div>
+        </div>
+
+
+        <!-- Add Exam -->
+
+        <section class="dashboard-box exam-form-box">
+
+            <div class="box-header">
+                <h2>Add New Exam</h2>
+            </div>
+
+            <form id="examForm">
+
+                <div class="form-grid">
+
+                    <div>
+                        <label>Subject</label>
+                        <input
+                            type="text"
+                            id="examSubject"
+                            placeholder="Example: Operating Systems"
+                            required
+                        >
+                    </div>
+
+                    <div>
+                        <label>Exam Date</label>
+                        <input
+                            type="date"
+                            id="examDate"
+                            required
+                        >
+                    </div>
+
+                    <div>
+                        <label>Exam Time</label>
+                        <input
+                            type="time"
+                            id="examTime"
+                            required
+                        >
+                    </div>
+
+                    <div>
+                        <label>Preparation</label>
+
+                        <select id="examStatus">
+
+                            <option value="Not Started">
+                                Not Started
+                            </option>
+
+                            <option value="In Progress">
+                                In Progress
+                            </option>
+
+                            <option value="Prepared">
+                                Prepared
+                            </option>
+
+                        </select>
+                    </div>
+
+                </div>
+
+                <button type="submit" class="add-task-btn">
+                    + Add Exam
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- Exam Statistics -->
+
+        <section class="task-stats">
+
+            <div class="stat-box">
+                <div class="stat-icon">📚</div>
+                <h3 id="totalExams">0</h3>
+                <p>Total Exams</p>
+            </div>
+
+            <div class="stat-box">
+                <div class="stat-icon">⏳</div>
+                <h3 id="upcomingExams">0</h3>
+                <p>Upcoming</p>
+            </div>
+
+            <div class="stat-box">
+                <div class="stat-icon">✅</div>
+                <h3 id="preparedExams">0</h3>
+                <p>Prepared</p>
+            </div>
+
+        </section>
+
+
+        <!-- Exam List -->
+<div class="search-box">
+    <input
+        type="text"
+        id="examSearch"
+        placeholder="🔎 Search exams..."
+        oninput="searchExams()"
+    >
+</div>
+        <section class="dashboard-box">
+
+            <div class="box-header">
+                <h2>My Exams</h2>
+            </div>
+
+            <div id="examList"></div>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

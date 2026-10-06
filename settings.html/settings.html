@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - StudyPulse</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dashboard-page">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            📚 StudyPulse
+        </div>
+
+        <nav>
+            <a href="dashboard.html">🏠 Dashboard</a>
+            <a href="timetable.html">📅 Timetable</a>
+            <a href="tasks.html">✅ Tasks</a>
+            <a href="focus.html">⏱️ Focus Timer</a>
+            <a href="exams.html">📚 Exams</a>
+            <a href="progress.html">📊 Progress</a>
+            <a href="goals.html">🎯 Goals</a>
+            <a href="settings.html" class="active">⚙️ Settings</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="index.html">🚪 Logout</a>
+        </div>
+
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-dashboard">
+
+        <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+            ☰ Menu
+        </button>
+
+        <div class="dashboard-top">
+            <div>
+                <h1>Settings ⚙️</h1>
+                <p>Customize your StudyPulse experience.</p>
+            </div>
+        </div>
+
+        <!-- Settings Box -->
+        <section class="settings-box">
+
+            <h2>👤 Student Profile</h2>
+
+            <div class="settings-form">
+
+                <div class="settings-field">
+                    <label for="settingsName">Student Name</label>
+                    <input
+                        type="text"
+                        id="settingsName"
+                        placeholder="Enter your name"
+                    >
+                </div>
+
+                <div class="settings-field">
+                    <label for="settingsCourse">Course / Branch</label>
+                    <input
+                        type="text"
+                        id="settingsCourse"
+                        placeholder="Example: B.Tech CSE"
+                    >
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Study Preferences -->
+        <section class="settings-box">
+
+            <h2>📚 Study Preferences</h2>
+
+            <div class="settings-form">
+
+                <div class="settings-field">
+                    <label for="dailyStudyTarget">
+                        Daily Study Target (hours)
+                    </label>
+
+                    <input
+                        type="number"
+                        id="dailyStudyTarget"
+                        min="1"
+                        max="24"
+                        value="2"
+                    >
+                </div>
+
+                <div class="settings-field">
+                    <label for="defaultFocusDuration">
+                        Default Focus Duration
+                    </label>
+
+                    <select id="defaultFocusDuration">
+                        <option value="25">25 minutes</option>
+                        <option value="45">45 minutes</option>
+                        <option value="60">60 minutes</option>
+                    </select>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Notifications -->
+        <section class="settings-box">
+
+            <h2>🔔 Notifications</h2>
+
+            <label class="settings-checkbox">
+                <input type="checkbox" id="enableNotifications">
+                Enable study reminders
+            </label>
+
+        </section>
+
+        <!-- Buttons -->
+        <div class="settings-buttons">
+
+            <button class="save-settings-btn" onclick="saveSettings(event)">
+                💾 Save Settings
+            </button>
+
+            <button class="reset-settings-btn" onclick="resetSettings()">
+                🔄 Reset
+            </button>
+
+        </div>
+
+        <p id="settingsMessage" class="settings-message"></p>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

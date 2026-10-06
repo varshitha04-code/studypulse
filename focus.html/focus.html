@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus Timer - StudyPulse</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dashboard-page">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            📚 StudyPulse
+        </div>
+
+        <nav>
+            <a href="dashboard.html">🏠 Dashboard</a>
+            <a href="timetable.html">📅 Timetable</a>
+            <a href="tasks.html">📝 Tasks</a>
+            <a href="focus.html" class="active">⏱️ Focus Timer</a>
+            <a href="#">📚 Exams</a>
+            <a href="#">📊 Progress</a>
+            <a href="#">🎯 Goals</a>
+            <a href="#">⚙️ Settings</a>
+        </nav>
+
+        <a href="index.html" class="logout">🚪 Logout</a>
+
+    </aside>
+
+
+    <!-- Main Content -->
+    <main class="main-dashboard">
+
+        <div class="dashboard-top">
+            <div>
+                <h1>Focus Timer ⏱️</h1>
+                <p>Stay focused and make your study time productive.</p>
+            </div>
+        </div>
+
+
+        <!-- Timer -->
+        <section class="timer-card">
+
+            <p class="timer-mode" id="timerMode">
+                Focus Session
+            </p>
+
+            <div class="timer-display" id="timerDisplay">
+                25:00
+            </div>
+
+            <div class="timer-controls">
+
+                <button class="timer-btn start-btn"
+                        onclick="startFocusTimer()">
+                    ▶ Start
+                </button>
+
+                <button class="timer-btn pause-btn"
+                        onclick="pauseFocusTimer()">
+                    ⏸ Pause
+                </button>
+
+                <button class="timer-btn reset-btn"
+                        onclick="resetFocusTimer()">
+                    🔄 Reset
+                </button>
+
+            </div>
+
+
+            <!-- Duration Selection -->
+            <div class="timer-options">
+
+                <p>Choose Session Duration</p>
+
+                <button onclick="setFocusDuration(25)">
+                    25 Minutes
+                </button>
+
+                <button onclick="setFocusDuration(45)">
+                    45 Minutes
+                </button>
+
+                <button onclick="setFocusDuration(60)">
+                    60 Minutes
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Statistics -->
+        <section class="focus-stat-grid">
+
+            <div class="stat-box">
+                <div class="stat-icon">🔥</div>
+                <h3 id="todaySessions">0</h3>
+                <p>Sessions Today</p>
+            </div>
+
+            <div class="stat-box">
+                <div class="stat-icon">⏱️</div>
+                <h3 id="totalFocusTime">0 min</h3>
+                <p>Total Focus Time</p>
+            </div>
+
+            <div class="stat-box">
+                <div class="stat-icon">🎯</div>
+                <h3 id="focusStreak">0</h3>
+                <p>Focus Sessions</p>
+            </div>
+
+        </section>
+
+
+        <!-- Recent Sessions -->
+        <section class="focus-history">
+
+            <div class="box-header">
+                <h2>Recent Focus Sessions</h2>
+            </div>
+
+            <div id="focusHistory">
+                <p class="no-tasks">
+                    No completed sessions yet.
+                </p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

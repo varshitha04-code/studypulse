@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Progress - StudyPulse</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dashboard-page">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+            📚 StudyPulse
+        </div>
+
+        <nav>
+
+            <a href="dashboard.html">
+                🏠 Dashboard
+            </a>
+
+            <a href="timetable.html">
+                📅 Timetable
+            </a>
+
+            <a href="tasks.html">
+                📝 Tasks
+            </a>
+
+            <a href="focus.html">
+                ⏱️ Focus Timer
+            </a>
+
+            <a href="exams.html">
+                📚 Exams
+            </a>
+
+            <a href="progress.html" class="active">
+                📊 Progress
+            </a>
+
+            <a href="#">
+                🎯 Goals
+            </a>
+
+            <a href="#">
+                ⚙️ Settings
+            </a>
+
+        </nav>
+
+        <a href="index.html" class="logout">
+            🚪 Logout
+        </a>
+
+    </aside>
+
+
+    <!-- Main -->
+
+    <main class="main-dashboard">
+
+        <div class="dashboard-top">
+
+            <div>
+
+                <h1>Progress Analytics 📊</h1>
+
+                <p>
+                    Track your study performance and improvement.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Main Statistics -->
+
+        <section class="focus-stat-grid">
+
+            <div class="stat-box">
+
+                <div class="stat-icon">
+                    ⏱️
+                </div>
+
+                <h3 id="progressFocusTime">
+                    0 min
+                </h3>
+
+                <p>
+                    Total Focus Time
+                </p>
+
+            </div>
+
+
+            <div class="stat-box">
+
+                <div class="stat-icon">
+                    ✅
+                </div>
+
+                <h3 id="progressCompletedTasks">
+                    0
+                </h3>
+
+                <p>
+                    Completed Tasks
+                </p>
+
+            </div>
+
+
+            <div class="stat-box">
+
+                <div class="stat-icon">
+                    📚
+                </div>
+
+                <h3 id="progressExams">
+                    0
+                </h3>
+
+                <p>
+                    Upcoming Exams
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Task Progress -->
+
+        <section class="dashboard-box progress-box">
+
+            <div class="box-header">
+
+                <h2>
+                    Task Completion
+                </h2>
+
+            </div>
+
+            <div class="progress-bar-container">
+
+                <div
+                    class="progress-bar"
+                    id="taskProgressBar">
+                </div>
+
+            </div>
+
+            <p id="taskProgressText">
+                0% of your tasks completed
+            </p>
+
+        </section>
+
+
+        <!-- Focus Progress -->
+
+        <section class="dashboard-box progress-box">
+
+            <div class="box-header">
+
+                <h2>
+                    Focus Sessions
+                </h2>
+
+            </div>
+
+            <div class="progress-circle">
+
+                <div>
+
+                    <strong id="focusSessionCount">
+                        0
+                    </strong>
+
+                    <span>
+                        Sessions
+                    </span>
+
+                </div>
+
+            </div>
+
+            <p>
+                Keep completing focused study sessions!
+            </p>
+
+        </section>
+
+
+        <!-- Weekly Overview -->
+
+        <section class="dashboard-box">
+
+            <div class="box-header">
+
+                <h2>
+                    Weekly Study Overview
+                </h2>
+
+            </div>
+
+            <div class="weekly-chart">
+
+                <div class="chart-column">
+                    <span id="monBar"></span>
+                    <small>Mon</small>
+                </div>
+
+                <div class="chart-column">
+                    <span id="tueBar"></span>
+                    <small>Tue</small>
+                </div>
+
+                <div class="chart-column">
+                    <span id="wedBar"></span>
+                    <small>Wed</small>
+                </div>
+
+                <div class="chart-column">
+                    <span id="thuBar"></span>
+                    <small>Thu</small>
+                </div>
+
+                <div class="chart-column">
+                    <span id="friBar"></span>
+                    <small>Fri</small>
+                </div>
+
+                <div class="chart-column">
+                    <span id="satBar"></span>
+                    <small>Sat</small>
+                </div>
+
+                <div class="chart-column">
+                    <span id="sunBar"></span>
+                    <small>Sun</small>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

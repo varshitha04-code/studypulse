@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StudyPulse - Smart Study Platform</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            📚 StudyPulse
+        </div>
+
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#features">Features</a>
+            <a href="#dashboard">Dashboard</a>
+            <a href="#about">About</a>
+        </div>
+
+        <button class="login-btn" onclick="showLogin()">
+            Login
+        </button>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+
+        <div class="hero-text">
+
+            <h1>
+                Study Smarter.<br>
+                <span>Achieve More.</span>
+            </h1>
+
+            <p>
+                StudyPulse is your smart study and productivity
+                platform for planning, focusing and tracking your
+                academic progress.
+            </p>
+
+            <div class="hero-buttons">
+
+                <button onclick="startStudying()">
+                    Start Studying
+                </button>
+
+                <button class="secondary-btn" onclick="scrollToFeatures()">
+                    Explore Features
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-card">
+
+            <div class="card-header">
+                <span>📊 Today's Progress</span>
+                <span>🔥 7 days</span>
+            </div>
+
+            <div class="progress-circle">
+                <div>
+                    <strong>75%</strong>
+                    <small>Complete</small>
+                </div>
+            </div>
+
+            <div class="study-stats">
+
+                <div>
+                    <strong>3.5h</strong>
+                    <small>Study Time</small>
+                </div>
+
+                <div>
+                    <strong>8</strong>
+                    <small>Tasks Done</small>
+                </div>
+
+                <div>
+                    <strong>92%</strong>
+                    <small>Focus</small>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Features -->
+    <section id="features" class="features">
+
+        <h2>Everything You Need to Study Better</h2>
+
+        <p class="section-description">
+            Manage your complete study routine in one place.
+        </p>
+
+
+        <div class="feature-grid">
+
+            <div class="feature-card">
+                <div class="icon">📅</div>
+                <h3>Smart Timetable</h3>
+                <p>
+                    Create and manage your personalized study schedule.
+                </p>
+            </div>
+
+
+            <div class="feature-card">
+                <div class="icon">✅</div>
+                <h3>Task Manager</h3>
+                <p>
+                    Track assignments, projects and important deadlines.
+                </p>
+            </div>
+
+
+            <div class="feature-card">
+                <div class="icon">⏱️</div>
+                <h3>Focus Timer</h3>
+                <p>
+                    Use the Pomodoro technique to improve concentration.
+                </p>
+            </div>
+
+
+            <div class="feature-card">
+                <div class="icon">📊</div>
+                <h3>Progress Analytics</h3>
+                <p>
+                    Understand your study habits with useful statistics.
+                </p>
+            </div>
+
+
+            <div class="feature-card">
+                <div class="icon">🎯</div>
+                <h3>Study Goals</h3>
+                <p>
+                    Set daily and weekly goals and track your progress.
+                </p>
+            </div>
+
+
+            <div class="feature-card">
+                <div class="icon">🤖</div>
+                <h3>Smart Recommendations</h3>
+                <p>
+                    Get recommendations based on your study progress.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Dashboard Preview -->
+    <section id="dashboard" class="dashboard-section">
+
+        <h2>Student Dashboard</h2>
+
+        <div class="dashboard">
+
+            <div class="dashboard-header">
+
+                <div>
+                    <h2>Good Morning, Student 👋</h2>
+                    <p>Here's your study overview for today.</p>
+                </div>
+
+                <div class="date">
+                    📅 Today
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-cards">
+
+                <div class="dash-card">
+                    <span>📚</span>
+                    <h3>4</h3>
+                    <p>Tasks Remaining</p>
+                </div>
+
+                <div class="dash-card">
+                    <span>⏰</span>
+                    <h3>2.5h</h3>
+                    <p>Study Planned</p>
+                </div>
+
+                <div class="dash-card">
+                    <span>🔥</span>
+                    <h3>7</h3>
+                    <p>Day Streak</p>
+                </div>
+
+                <div class="dash-card">
+                    <span>🎯</span>
+                    <h3>80%</h3>
+                    <p>Weekly Goal</p>
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-content">
+
+                <div class="tasks">
+
+                    <h3>Today's Tasks</h3>
+
+                    <div class="task">
+                        <input type="checkbox">
+                        <span>Complete Java assignment</span>
+                    </div>
+
+                    <div class="task">
+                        <input type="checkbox">
+                        <span>Study Operating Systems</span>
+                    </div>
+
+                    <div class="task">
+                        <input type="checkbox">
+                        <span>Prepare DBMS notes</span>
+                    </div>
+
+                    <div class="task">
+                        <input type="checkbox">
+                        <span>Practice Mathematics</span>
+                    </div>
+
+                </div>
+
+
+                <div class="recommendation">
+
+                    <h3>🤖 Smart Recommendation</h3>
+
+                    <p>
+                        Your Operating Systems progress is lower than
+                        your other subjects.
+                    </p>
+
+                    <strong>
+                        Recommended: Study OS for 45 minutes today.
+                    </strong>
+
+                    <button onclick="startTimer()">
+                        Start Focus Session
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- About -->
+    <section id="about" class="about">
+
+        <h2>About StudyPulse</h2>
+
+        <p>
+            StudyPulse helps students organize their academic life,
+            improve productivity and understand their study habits.
+        </p>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <h3>📚 StudyPulse</h3>
+
+        <p>
+            Plan. Focus. Track. Improve.
+        </p>
+
+        <p>
+            © 2026 StudyPulse
+        </p>
+
+    </footer>
+
+
+    <!-- Login Popup -->
+    <div id="loginModal" class="modal">
+
+        <div class="modal-content">
+
+            <span class="close" onclick="closeLogin()">
+                &times;
+            </span>
+
+            <h2>Welcome to StudyPulse</h2>
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Enter your email"
+            >
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Enter your password"
+            >
+
+            <button onclick="login()">
+                Login
+            </button>
+
+            <p id="loginMessage"></p>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

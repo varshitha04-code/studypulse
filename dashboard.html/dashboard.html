@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StudyPulse Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="dashboard-page">
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+            <div class="sidebar-logo">
+                📚 StudyPulse
+            </div>
+
+            <nav>
+
+                <a href="#" class="active">
+                    🏠 Dashboard
+                </a>
+<div class="student-profile">
+
+    <div class="profile-circle">
+        👩‍🎓
+    </div>
+
+    <div class="profile-info">
+
+        <h2 id="studentName">
+            Student
+        </h2>
+
+        <p id="studentCourse">Computer Science Student</p>
+
+    </div>
+
+    <button
+        class="edit-profile-btn"
+        onclick="editStudentProfile()">
+
+        ✏️ Edit Profile
+
+    </button>
+
+</div>
+
+                <a href="timetable.html">
+    📅 Timetable
+</a>
+
+                <a href="tasks.html">
+    ✅ Tasks
+</a>
+
+                <a href="focus.html">⏱️ Focus Timer</a>
+
+                <a href="exams.html">📚 Exams</a>
+
+                <a href="progress.html">📊 Progress</a>
+
+                <a href="goals.html">🎯 Goals</a>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+
+                <a href="#">
+                    ⚙️ Settings
+                </a>
+
+               <a href="index.html" onclick="localStorage.removeItem('studyPulseLoggedIn')">
+    🚪 Logout
+</a>
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+
+        <main class="main-dashboard">
+<button
+    class="mobile-menu-btn"
+    onclick="toggleMobileMenu()">
+
+    ☰ Menu
+
+</button>
+
+            <!-- TOP BAR -->
+
+            <header class="dashboard-top">
+
+                <div>
+                    <h1>Good Morning! 👋</h1>
+                    <p>Let's make today productive.</p>
+                </div>
+<div class="dashboard-clock">
+    🕐 <span id="dashboardClock">--:--</span>
+</div>
+                <div class="student-profile">
+
+                    <div class="profile-circle">
+                        S
+                    </div>
+
+                    <div>
+                        <strong>Student</strong>
+                        <small>Computer Science</small>
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- STATISTICS -->
+
+            <section class="stats-grid">
+
+                <div class="stat-box">
+
+                    <div class="stat-icon">⏱️</div>
+
+                    <div>
+                       <h3 id="dashboardStudyTime">0 min</h3>
+<p>Study Time</p>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-box">
+
+                    <div class="stat-icon">✅</div>
+
+                    <div>
+                      <h3 id="dashboardTasks">0/0</h3>
+<p>Tasks</p>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-box">
+
+                    <div class="stat-icon">🔥</div>
+
+                    <div>
+                       <h3 id="dashboardExams">0</h3>
+<p>Upcoming Exams</p>
+                    </div>
+
+                </div>
+
+
+                <div class="stat-box">
+
+                    <div class="stat-icon">🎯</div>
+
+                    <div>
+                       <h3 id="dashboardGoal">0%</h3>
+<p>Goal Progress</p>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- CONTENT GRID -->
+
+            <section class="dashboard-grid">
+
+
+                <!-- TODAY'S SCHEDULE -->
+
+                <div class="dashboard-box">
+
+                    <div class="box-header">
+
+                        <h2>📅 Today's Schedule</h2>
+<section class="dashboard-box">
+
+    <div class="box-header">
+
+        <h2>Upcoming Exams 📚</h2>
+
+        <a href="exams.html">
+            View All
+        </a>
+
+    </div>
+
+    <div id="dashboardExamList"></div>
+
+</section>
+
+                        <button onclick="addStudySession()">
+                            + Add
+                        </button>
+
+                    </div>
+
+
+                    <div class="schedule-item">
+
+                        <div class="time">
+                            09:00 AM
+                        </div>
+
+                        <div class="schedule-info">
+
+                            <strong>Data Structures</strong>
+
+                            <span>
+                                📖 Chapter 4 - Trees
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="schedule-item">
+
+                        <div class="time">
+                            11:00 AM
+                        </div>
+
+                        <div class="schedule-info">
+
+                            <strong>Operating Systems</strong>
+
+                            <span>
+                                📖 Process Management
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="schedule-item">
+
+                        <div class="time">
+                            02:00 PM
+                        </div>
+
+                        <div class="schedule-info">
+
+                            <strong>Database Management</strong>
+
+                            <span>
+                                📖 SQL Queries
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="schedule-item">
+
+                        <div class="time">
+                            05:00 PM
+                        </div>
+
+                        <div class="schedule-info">
+
+                            <strong>Mathematics</strong>
+
+                            <span>
+                                📖 Practice Problems
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TASKS -->
+
+                <div class="dashboard-box">
+
+                    <div class="box-header">
+
+                        <h2>✅ Today's Tasks</h2>
+<section class="dashboard-box">
+
+    <div class="box-header">
+
+        <h2>Today's Tasks</h2>
+
+        <a href="tasks.html">
+            View All
+        </a>
+
+    </div>
+
+    <div id="dashboardTaskList"></div>
+
+</section>
+                        <button onclick="addTask()">
+                            + Add
+                        </button>
+
+                    </div>
+
+
+                    <div class="dashboard-task">
+
+                        <input type="checkbox">
+
+                        <div>
+                            <strong>Complete Java Assignment</strong>
+                            <span>Due Today</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="dashboard-task">
+
+                        <input type="checkbox">
+
+                        <div>
+                            <strong>Prepare DBMS Notes</strong>
+                            <span>Due Tomorrow</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="dashboard-task">
+
+                        <input type="checkbox">
+
+                        <div>
+                            <strong>Practice OS Questions</strong>
+                            <span>Due Tomorrow</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="dashboard-task">
+
+                        <input type="checkbox">
+
+                        <div>
+                            <strong>Complete Maths Exercise</strong>
+                            <span>Due Friday</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- LOWER SECTION -->
+
+            <section class="dashboard-grid">
+
+
+                <!-- SMART RECOMMENDATION -->
+
+                <div class="dashboard-box recommendation-box">
+
+                    <section class="dashboard-box recommendation-box">
+
+    <div class="box-header">
+        <h2>🤖 Smart Recommendation</h2>
+    </div>
+
+    <div id="smartRecommendation">
+
+        <h3>Loading recommendation...</h3>
+
+        <p>
+            StudyPulse is analyzing your study activity.
+        </p>
+
+    </div>
+
+    <button
+        id="recommendationButton"
+        onclick="openRecommendationAction()">
+
+        Start Studying
+
+    </button>
+
+</section>
+
+                    </div>
+
+                    <button onclick="startFocus()">
+                        Start 45 Minute Session
+                    </button>
+
+                </div>
+
+
+                <!-- WEEKLY GOAL -->
+
+                <div class="dashboard-box">
+
+                    <h2>🎯 Weekly Study Goal</h2>
+
+                    <div class="goal-circle">
+
+                        <strong>16.5h</strong>
+
+                        <span>of 20 hours</span>
+
+                    </div>
+
+                    <p class="goal-message">
+                        Great work! Only 3.5 hours remaining.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
